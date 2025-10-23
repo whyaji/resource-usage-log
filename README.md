@@ -100,14 +100,14 @@ npm run scheduler:dev
 # Build the project
 npm run build
 
-# Start the API server
-npm start
+# Start pm2 ecosystem.config.cjs
+pm2 start ecosystem.config.cjs
 
-# Start the worker
-npm run worker:start
-
-# Start the scheduler
-npm run scheduler:start
+# check status
+pm2 status
+pm2 logs
+pm2 save
+pm2 startup
 ```
 
 ## API Endpoints

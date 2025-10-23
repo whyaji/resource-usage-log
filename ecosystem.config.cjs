@@ -1,5 +1,6 @@
 // Define common environment variables for production
 const env_production = {
+  PORT: 3000,
   NODE_ENV: 'production',
   LOG_LEVEL: 'info',
   DB_HOST: 'localhost',
