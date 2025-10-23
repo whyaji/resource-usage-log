@@ -6,9 +6,9 @@
     "worker:dev": "tsx watch src/worker/index.ts",
     "scheduler:dev": "tsx watch src/scheduler/index.ts",
     "build": "tsc",
-    "start": "node dist/index.js",
-    "worker:start": "node dist/worker/index.js",
-    "scheduler:start": "node dist/scheduler/index.js"
+    "start": "node dist/src/index.js",
+    "worker:start": "node dist/src/worker/index.js",
+    "scheduler:start": "node dist/src/scheduler/index.js"
   },
   "dependencies": {
     "@hono/node-server": "^1.19.5",
