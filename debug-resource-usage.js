@@ -24,7 +24,7 @@ async function testResourceCollection() {
     const memData = await si.mem();
     console.log('Memory Data:', {
       total: Math.round(memData.total / 1024 / 1024) + ' MB',
-      used: Math.round(memData.used / 1024 / 1024) + ' MB',
+      used: Math.round(memData.active / 1024 / 1024) + ' MB',
       free: Math.round(memData.free / 1024 / 1024) + ' MB',
       available: Math.round(memData.available / 1024 / 1024) + ' MB',
     });

@@ -24,7 +24,7 @@ async function collectResourceUsage(): Promise<{
 
     // Get memory information
     const memData = await si.mem();
-    const memoryUsedMB = Math.round(memData.used / 1024 / 1024);
+    const memoryUsedMB = Math.round(memData.active / 1024 / 1024);
     const memoryTotalMB = Math.round(memData.total / 1024 / 1024);
 
     // Get disk information
