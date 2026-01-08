@@ -1,25 +1,9 @@
-// Define common environment variables for production
-const env_production = {
-  PORT: 3000,
-  NODE_ENV: 'production',
-  LOG_LEVEL: 'info',
-  DB_HOST: 'localhost',
-  DB_PORT: 3306,
-  DB_USER: 'your-db-user',
-  DB_PASSWORD: 'your-db-password',
-  DB_NAME: 'your-db-name',
-  APP_API_KEY: 'your-app-api-key',
-  REDIS_HOST: 'localhost',
-  REDIS_PORT: 6379,
-  REDIS_PASSWORD: 'your-redis-password',
-};
-
 module.exports = {
   apps: [
     {
       name: 'resource-status-api',
       script: 'dist/src/index.js',
-      env: env_production,
+      env_file: '.env',
       instances: 1,
       exec_mode: 'fork', // use 'cluster' if you want multiple instances
       error_file: './logs/pm2-api-error.log',
@@ -32,7 +16,7 @@ module.exports = {
     {
       name: 'resource-status-worker',
       script: 'dist/src/worker/index.js',
-      env: env_production,
+      env_file: '.env',
       instances: 1,
       exec_mode: 'fork',
       error_file: './logs/pm2-worker-error.log',
@@ -45,7 +29,7 @@ module.exports = {
     {
       name: 'resource-status-scheduler',
       script: 'dist/src/scheduler/index.js',
-      env: env_production,
+      env_file: '.env',
       instances: 1,
       exec_mode: 'fork',
       error_file: './logs/pm2-scheduler-error.log',
